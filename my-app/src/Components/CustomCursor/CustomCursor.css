@@ -1,0 +1,28 @@
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    pointer-events: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    z-index: 10000;
+    opacity: 0; /* Hidden by default */
+    transform: translate(-50%, -50%);
+    will-change: transform, width, height, background-color, border-color;
+}
+
+/* Show the cursor when within a specific area */
+body:hover .custom-cursor {
+    opacity: 1;
+}
+
+/* Enlarged cursor on hover with gray background and border removed */
+.custom-cursor.hovering {
+    background-color: lightgray; /* Fill the background with gray */
+    border-color: transparent; /* Remove the border */
+    width: 60px; /* Increase width */
+    height: 60px; /* Increase height */
+    transform: translate(-50%, -50%) scale(1.5); /* Make it larger */
+    z-index: -1; /* Ensure it goes behind the hovered element */
+}

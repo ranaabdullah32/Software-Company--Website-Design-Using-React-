@@ -1,0 +1,109 @@
+.portfolio-container {
+    /* Styles for the main container */
+    padding: 2rem 0; /* Adjust as needed */
+}
+
+.portfolio-heading {
+    font-weight: bold;
+    font-size: 2.5rem; /* Adjust as needed */
+}
+
+.portfolio-title {
+    font-weight: bold;
+    font-size: 2rem; /* Adjust as needed */
+    color: black; /* Title color */
+}
+
+
+    .portfolio-filter {
+        color: #202020;
+      
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 15px 0 0;
+        padding: 0;
+    }
+
+
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid lightgray;
+}
+
+.portfolio-image {
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.1); /* Makes the image appear larger as the overlay appears */
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 0.9;
+}
+
+.portfolio-overlay-icon {
+    font-size: 80px; /* Increased size of the icon */
+    font-weight :lighter; /* Ensure the icon is not bold */
+    color: #fff; /* Icon color */
+}
+
+.portfolio-summary {
+ 
+    text-align: center; /* Center text for mobile */
+}
+
+
+.portfolio-summary-number {
+    /* Styles for the project number */
+    color: var(--primary-color); /* Adjust as needed */
+}
+.active-filter {
+
+    border-bottom: 2px solid var(--primary-color); /* Add primary color bottom border */
+}
+.portfolio-filter:hover {
+
+    color: var(--primary-color); /* Change text color on hover */
+    border-bottom: 2px solid gray; /* Gray border on hover */
+}
+.fade-enter {
+    opacity: 0;
+    transform: translateX(-100%); /* Start from the left */
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateX(100%); /* Move out to the right */
+    transition: opacity 500ms ease, transform 500ms ease;
+  }
+  

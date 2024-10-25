@@ -1,0 +1,635 @@
+
+.home-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color :var(--white-color);
+  padding-top: 10px;
+}
+
+.home-container .inner-bg-overlay {
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 26%;
+  top: 0;
+}
+
+
+.home-container .row {
+  display: flex;
+  width: 100%;
+}
+
+
+ .left-content {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.text-slide .main-heading {
+  color: var(--white-color);
+  font-family: Raleway, sans-serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.team-image {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+}
+
+.home-container .social-icons a {
+  color: var(--white-color);
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.home-container .social-icons {
+  position: relative;
+  top: 1%;
+  transform: translateY(0%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-container .social-icons a:hover {
+  transform: translateY(-20px);
+}
+
+.text-slide {
+  color :var(--white-color);
+  padding: 11%;
+}
+
+.description {
+  font-size: 14.5px;
+  margin-top: 20px;
+}
+
+.learn-more-btn {
+  position: relative;
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: transparent; /* Start with transparent background */
+  border: 1px solid var(--white-color);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden; /* Hide overflow to allow corner fill */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.learn-more-btn span {
+  position: relative; /* Position text relative to the button */
+  z-index: 1; /* Ensure text stays above the background */
+  transition: color 0.3s ease; /* Transition for text color */
+}
+
+.learn-more-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the full width */
+  height: 100%; /* Cover the full height */
+  background-color: var(--secondary-color); /* Fill color */
+  transform: translate(-100%, -100%); /* Start off-screen diagonally */
+  transition: transform 0.5s ease; /* Smooth transition for filling effect */
+  z-index: 0; /* Place behind the text */
+
+
+}
+.learn-more-btn:hover{
+  border: none;
+}
+
+.learn-more-btn:hover::before {
+  transform: translate(0, 0); /* Move to fill the button on hover */
+
+
+}
+
+.learn-more-btn:hover span {
+  color: var(--white-color); /* Change text color on hover */
+}
+
+.slider-controls {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+  gap: 10px;
+}
+
+.up-arrow,
+.down-arrow {
+  font-size: 14px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  border: 0;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  color :var(--white-color);
+}
+
+.up-arrow:hover,
+.down-arrow:hover {
+  background-color: #00aeef;
+}
+
+/* Vertical carousel styles */
+.vertical-carousel .carousel-inner {
+  height: 100%; /* Ensure the inner carousel takes full height */
+}
+
+.vertical-carousel .carousel-item {
+  height: 100%; /* Make each carousel item take full height */
+  transition: transform 0.6s ease-in-out; /* Smooth transition for vertical slide */
+}
+
+.vertical-carousel .carousel-item-next,
+.vertical-carousel .carousel-item-prev {
+  position: absolute; /* Position the items absolutely */
+  top: 0; /* Align to the top */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+}
+
+/* When moving to the next slide, it enters from the bottom */
+.vertical-carousel .carousel-item-next {
+  transform: translateY(100%); /* Initial position: below the current slide */
+}
+
+/* When moving to the previous slide, it enters from the top */
+.vertical-carousel .carousel-item-prev {
+  transform: translateY(-100%); /* Initial position: above the current slide */
+}
+
+/* Transitioning the current item out */
+.vertical-carousel .active.carousel-item-start {
+  transform: translateY(-100%); /* Move the active item upwards when going to the next slide */
+}
+
+.vertical-carousel .active.carousel-item-end {
+  transform: translateY(100%); /* Move the active item downwards when going to the previous slide */
+}
+
+/* Ensuring a smooth slide when transitioning to the next or previous */
+.vertical-carousel .carousel-item-next.carousel-item-start,
+.vertical-carousel .carousel-item-prev.carousel-item-end {
+  transform: translateY(0); /* The new item takes the place of the active item */
+}
+
+/* Media queries for responsiveness */
+/* Media queries for responsiveness */
+@media (max-width: 912px) {
+  .home-container {
+    flex-direction: column; /* Stack the left and right content */
+    height: auto;
+    padding-bottom: 73px; /* Allow height to adjust based on content */
+  }
+
+  .left-content {
+    padding: 10px; /* Adjust padding for smaller screens */
+    flex: none; /* Reset flex to auto for stacking */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center text on small screens */
+  }
+
+  .right-content {
+    flex: none; /* Reset flex to auto for stacking */
+    width: 100%; /* Take full width */
+    display: flex; /* Keep it a flex container for the images */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    overflow: hidden; /* Ensure overflow is hidden */
+  }
+
+  .vertical-carousel {
+    width: 100%; /* Ensure carousel takes full width */
+    height: 300px; /* Set a fixed height for the carousel */
+  }
+
+  .vertical-carousel .carousel-item {
+    height: 100%; /* Make each carousel item take full height */
+  }
+
+  .team-image {
+    width: 100%; /* Ensure images are full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container */
+    padding: 2%; /* Add some padding */
+  }
+
+  .home-container .inner-bg-overlay {
+    right: 0%;
+  }
+
+  .text-slide .main-heading {
+    font-size: 27px; /* Reduce heading size for smaller screens */
+  }
+
+  .up-arrow,
+  .down-arrow {
+    display: none; /* Hide arrows on smaller screens */
+  }
+
+  .home-container .social-icons {
+    display: none; /* Hide social icons on smaller screens */
+  }
+}
+/* App.css */
+
+/* Service Container Styles */
+/* AboutSection.css */
+
+/* Section Styles */
+.about-sec {
+  position: relative;
+  background-color: var(--secondary-color);
+  margin-left: 10%;
+  
+}
+
+
+
+/* Service Container Styles */
+.service-container {
+  margin-top: 1rem; /* Adjust padding as needed */
+
+}
+
+/* Service Area Styles */
+.service-container .service-area {
+  background-color: var(--secondary-color);
+  padding: 2rem; /* Add padding to the service area */
+}
+
+/* Description Area Styles */
+.service-container .description-area {
+  background-color: var(--secondary-color);
+  padding: 2rem; /* Add padding to the description area */
+  color: var(--white-color); /* Ensure text color is white for contrast */
+  border-left: 8px solid white;
+}
+
+/* Service Icon Styles */
+.service-container .service-area .service-icon {
+  width: 80px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+.service-container .service-area .service-icon:hover {
+  transform: scale(0.9) translateY(-10px);
+}
+
+/* Service Title Styles */
+.service-container .service-area .service-title {
+  color: var(--primary-color); /* Cyan color for service titles */
+}
+
+/* Main Title Styles */
+.service-container .description-area .title {
+  font-size: 2.5rem; /* Adjust title size as needed */
+  color: var(--white-color); /* Ensure title color is white for contrast */
+  font-weight: 700;
+  font-size: 45px;
+}
+.service-container .description-area .title  span {
+  color: var(--primary-color) ;
+}
+.service-container .description-area .title  p{
+  margin-bottom: 0px !important;
+}
+/* Description Text Styles */
+.service-container .description-area .description-text {
+  color: var(--white-color); /* White text color for descriptions */
+  margin-top: 1rem; /* Add margin for spacing */
+  font-size: 18px;
+  font-weight: 300;
+ 
+}
+
+/* Button Styles */
+.service-container .description-area .learn-more-btn {
+  width: 40%;
+ background-color: transparent;
+}
+.service-container .description-area .learn-more-btn::before {
+  background-color: var(--primary-color);
+}
+/* Button Hover Effect */
+
+.about-sec .serviceicon-text {
+  font-size: 18px;
+  color :var(--white-color);
+}
+@media (max-width: 912px) {
+  .service-container .description-area .learn-more-btn  {
+    width: 100%;
+  }
+  .service-container .description-area {
+    text-align: center;
+  }
+
+.about-sec {
+
+  margin-left: 0%;
+}
+.about-sec .serviceicon-text  {
+  font-size: 14px;
+}
+.service-container .description-area{
+  border-left: 0px;
+}
+.service-container .description-area .description-text {
+  font-size: 13px;
+}
+.service-container .description-area .title  {
+  font-size: 30px;
+}
+
+}
+.achievements-section {
+  padding: 60px 0;
+}
+.achievements-section .section-title{
+  margin-bottom: 8%;
+ font-size: 30px;
+font-weight: 700;
+}
+.circle-progress {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto;
+}
+.achievement-description {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #666;
+}
+.CircularProgressbar .CircularProgressbar-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: #666;
+  font-family: Raleway,sans-serif;
+
+}
+.amazing-team {
+  background-color: var(--primary-color);
+  padding: 50px 0;
+  margin-right: 8%;
+}
+.amazing-team .image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.amazing-team .image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.amazing-team .image-container .overlay {
+  position: absolute;
+  top: 5%; /* Distance from the top */
+  left: 10%; /* Distance from the left */
+  right: 10%; /* Distance from the right */
+  bottom: 5%; /* Distance from the bottom */
+  background-color: rgba(24, 174, 228, 0.8); /* Overlay color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Overlay above the image */
+}
+
+.amazing-team .image-container:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.amazing-team .image-container .overlay a {
+  color: var(--white-color); /* Initial color of icons (white) */
+  margin: 0 10px; /* Space between icons */
+  font-size: 20px; /* Adjust icon size */
+  position: relative; /* Positioning for the pseudo-element */
+  z-index: 2; /* Ensure icons are above the circle */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-20px); /* Move down slightly */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.amazing-team .image-container .overlay a::before {
+  content: ''; /* Circular background */
+  position: absolute;
+  top: 50%; /* Center the circle */
+  left: 50%; /* Center the circle */
+  width: 40px; /* Circle diameter */
+  height: 40px; /* Circle diameter */
+  border-radius: 50%; /* Make it circular */
+  background-color: white; /* Circle color */
+  transform: translate(-50%, -50%); /* Center the circle */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  z-index: -1; /* Circle below the icons */
+}
+
+.amazing-team .image-container .overlay a:hover::before {
+  opacity: 1; /* Show circle on icon hover */
+}
+
+.amazing-team .image-container .overlay a:hover {
+  color: #3264f5 ; /* Change icon color to blue on hover */
+
+}
+/* Animation for sequential icon appearance */
+.amazing-team .image-container:hover .overlay a:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+  transition-delay: 0.2s; /* No delay for the first icon */
+}
+
+.amazing-team .image-container:hover .overlay a:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+  transition-delay: 0.4s; /* 100ms delay for the second icon */
+}
+
+.amazing-team .image-container:hover .overlay a:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+  transition-delay: 0.6s; /* 200ms delay for the third icon */
+}
+/* Ensure icons remain white when hovering over the overlay */
+
+
+.amazing-team .team-heading {
+  color: var(--white-color);
+  text-align: left;
+}
+
+.team-heading h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 18%;
+}
+
+.team-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.team-info h3,
+.team-info p {
+
+  color: var(--white-color);
+}
+.team-info h3
+{
+  font-size : 22px;
+}
+.Teamimage-section {
+  position: relative;
+}
+
+.Teamimage-section img {
+  width: 100%;
+  height: auto;
+  padding: 0 6%;
+}
+
+.custom-prev,
+.custom-next {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  top: 40%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.custom-prev {
+  left: -3%;
+}
+
+.custom-next {
+  right: -2%;
+}
+
+.custom-prev .fa-angle-left,
+.custom-next .fa-angle-right {
+  font-size: 16px;
+  color: var(--white-color);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .amazing-team {
+    padding: 30px 5%;
+  }
+
+  .team-heading h2 {
+    font-size: 30px;
+    margin-left: 0;
+
+  }
+  .team-info h3 {
+    font-size: 1rem;
+  }
+
+  .team-info p {
+    font-size: 0.9rem;
+  }
+  .Teamimage-section img {
+    padding: 0 5%;
+  }
+
+  .custom-prev {
+    margin-left: -5%;
+  }
+
+  .custom-next {
+    margin-right: -4%;
+  }
+}
+@media (max-width: 800px) {
+  .team-heading h2{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .team-info h3 {
+    font-size: 1rem;
+  }
+
+  .team-info p {
+    font-size: 0.9rem;
+  }
+  .amazing-team {
+    margin-right: 0;
+    padding: 30px 0;
+  }
+
+  .team-heading h2 {
+    margin-left: 0;
+    font-size: 1.8rem;
+  }
+
+  .Teamimage-section img {
+    padding: 0 8%;
+  }
+
+
+}
+
+@media (max-width: 576px) {
+  .team-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .team-info h3 {
+    font-size: 1rem;
+  }
+
+  .team-info p {
+    font-size: 0.9rem;
+  }
+  .custom-prev,
+  .custom-next {
+    display: none;
+  }
+}
+
+

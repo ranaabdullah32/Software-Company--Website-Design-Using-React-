@@ -1,0 +1,370 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.simple-nav-logo .img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Navigation Styles */
+header .main-navigation {
+    padding-top: 30px;
+    padding-bottom: 30px; /* Combines top and bottom padding */
+}
+
+header .simple-nav-logo {
+    margin-right: 0;
+    text-align: center;
+}
+
+header .main-navigation .navbar {
+    padding: 0;
+}
+.main-navigation .navbar .nav-item .nav-text{
+   font-size: 14px;
+   color: var(--secondary-color); 
+   font-weight: 500;
+}
+/* Main Navigation Item Styles */
+header .main-navigation nav .navbar-nav .nav-item {
+    display: inline-block;
+    margin-left: 30px !important; /* Space between navbar items */
+    text-align: center;
+    position: relative;
+}
+
+
+
+/* Number Style */
+header .main-navigation nav .navbar-nav .nav-item .nav-link span {
+    color: var(--secondary-color);
+    font-size: 36px;
+    font-weight: 300;
+    opacity: 3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.num-separator {
+    color: var(--secondary-color);
+    font-size: 8px;
+    font-weight: 300;
+    margin-left: 3px; /* Spacing between numbers and separator */
+}
+
+.num-container {
+    display: flex;
+   
+    align-items: center;
+    flex-direction: row;
+ 
+}
+/* Ensure nav item centers its content */
+.main-navigation .nav-item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+.num-container {
+    font-size: 32px;
+    opacity: .3;
+}
+
+/* Side Menu Button */
+.sidemenu_btn {
+    background: transparent;
+    border: 0;
+    display: inline-block;
+    margin-top: .4rem;
+    outline: none;
+    padding: 6px;
+    position: absolute;
+    right: 0px;
+    transition: all .3s linear;
+    width: 36px;
+}
+
+.sidemenu_btn span {
+    background: var(--secondary-color);
+    display: block;
+    height: 2px;
+    margin: auto;
+    transition: .5s ease;
+    width: 100%;
+    margin-left: 2%;
+}
+
+
+.sidemenu_btn span:nth-child(2) {
+    margin: 4px 0;
+
+}
+.sidemenu_btn:hover span:nth-child(2) {
+background-color: var(--primary-color);
+transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.sidemenu_btn:hover span:first-child, 
+.sidemenu_btn:hover span:last-child {
+    background-color: var(--primary-color); 
+    width: 60%; 
+    margin-left: 20%; 
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Offcanvas Side Menu Styles */
+.side-menu {
+    background: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2032;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Inner Content of Side Menu */
+.side-menu-inner-content {
+    height: 100%; /* Set height to full */
+    padding: 7%; /* Remove padding */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    overflow: hidden;
+}
+
+/* Adjust the inner-wrapper for centering */
+.side-menu .inner-wrapper {
+    display: flex;
+    flex-direction: column; /* Keep the layout as a column */
+    align-items: center; /* Center the content */
+    justify-content: center; /* Center the content vertically */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    padding: 3.5rem 1rem; /* Updated padding: top/bottom 3.5rem, left/right 1rem */
+    position: relative;
+    text-align: left;
+}
+
+.w-100 {
+    padding-top: 1%;
+    background: var(--primary-color);
+    margin: 1%;
+}
+
+.side-nav {
+    padding-left: 3%;
+    padding-bottom: 3%;
+}
+
+/* Side Menu Navigation Items */
+.side-menu .navbar-nav {
+    color: var(--white-color);
+    font-size: 30px;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+}
+
+.side-nav .navbar-nav .nav-link {
+    padding: 2px 0 3px !important;
+}
+
+/* Hover Effect for Side Menu Items */
+.side-menu .navbar-nav .nav-item:hover {
+    color: var(--secondary-color);
+}
+
+.side-menu .navbar-nav .nav-item::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block; /* Ensure it displays as a block */
+    height: 2px; /* Thickness of the line */
+    background-color: #ffffff; /* White color for the line */
+    width: 0; /* Initial width is 0 */
+    position: absolute; /* Position it absolutely relative to the nav item */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Position it directly at the bottom of the text */
+    transition: width 0.3s ease; /* Smooth transition */
+}
+
+.side-menu .navbar-nav .nav-link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.side-menu .navbar-nav .nav-item:hover::after {
+    width: 100%;
+}
+
+.side-menu .navbar-nav .nav-item {
+    position: relative;
+}
+
+/* Company Details */
+.menu-company-details {
+    margin-bottom: 25px;
+    margin-top: -15px;
+    text-align: center; /* Center align */
+    line-height: 1.5; /* Separate lines for number, email, and copyright */
+}
+
+/* Center Footer Vertically */
+.side-footer {
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Footer Hover Effect */
+.side-footer a,
+.side-footer p {
+    color: var(--white-color);
+    transition: color 0.3s ease;
+    text-decoration-line: none;
+}
+
+.side-footer a:hover,
+.side-footer p:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer Icons */
+.social-icons-simple {
+    list-style: none !important;
+    padding: 0;
+}
+
+.social-icons-simple li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons-simple li a {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: center;
+    width: 40px;
+    color: var(--white-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Hover Effect for Icons with Circle Background */
+.social-icons-simple li a:hover {
+    background-color: var(--white-color); /* Circle background */
+    color: var(--secondary-color); /* Icon color on hover */
+}
+
+/* Close Button */
+.side-menu .btn-close {
+    cursor: pointer;
+    position: fixed; /* Keep it fixed to maintain its position */
+    right: 20px; /* Horizontal position */
+    top: 20px; /* Default top position for larger screens */
+    z-index: 9999; /* Ensure it stays on top */
+}
+
+.side-menu .btn-close:before,
+.side-menu .btn-close:after {
+    background: var(--white-color); /* Set color to white */
+    content: "";
+    height: 24px;
+    position: absolute;
+    top: 5px;
+    width: 2px;
+}
+
+.side-menu .btn-close:before {
+    left: 15px; /* Ensure consistent alignment */
+    transform: rotate(45deg); /* First diagonal line */
+}
+
+.side-menu .btn-close:after {
+    left: 15px; /* Ensure consistent alignment */
+    transform: rotate(-45deg);
+}
+
+/* Text var(--white-color) */
+.text-white {
+    color: var(--white-color);
+    font-size: 15px;
+}
+
+/* Overlay Background */
+.bg-overlay {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background: var(--secondary-color);
+    opacity: 0;
+}
+
+/* Adjusting spacing between navbar items */
+.nav-items-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.color-lines .row {
+    height: 25px;
+}
+
+.bg-color,
+.color-line-overlay {
+    background-color: var(--secondary-color);
+}
+
+.color-line-overlay {
+    height: 25px;
+    left: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+/** Media Queries **/
+@media only screen and (max-width: 990px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    .main-navigation .nav-items-container {
+        display: none;
+    }
+.side-menu .btn-close {
+        top: 5%;
+        right: 7%;
+    }
+.side-menu .navbar-nav .nav-link {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 930px) {
+    .side-menu .btn-close {
+        top: 30px;
+        right: 6%; /* Increase top position for larger screens */
+    }
+
+    .text-white {
+        font-size: 14px;
+    }
+}
