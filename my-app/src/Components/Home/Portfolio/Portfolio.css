@@ -1,5 +1,4 @@
 .portfolio-container {
-    /* Styles for the main container */
     padding: 2rem 0; /* Adjust as needed */
 }
 
@@ -14,22 +13,19 @@
     color: black; /* Title color */
 }
 
-
-    .portfolio-filter {
-        color: #202020;
-      
-        font-size: 13px;
-        font-weight: 600;
-        margin: 0 15px 0 0;
-        padding: 0;
-    }
-
-
+.portfolio-filter {
+    color: #202020;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 15px 0 0;
+    padding: 0;
+}
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
     border: 5px solid lightgray;
+    transition: transform 0.4s ease; /* Smooth transform on hover */
 }
 
 .portfolio-image {
@@ -62,48 +58,67 @@
 
 .portfolio-overlay-icon {
     font-size: 80px; /* Increased size of the icon */
-    font-weight :lighter; /* Ensure the icon is not bold */
+    font-weight: lighter; /* Ensure the icon is not bold */
     color: #fff; /* Icon color */
 }
 
 .portfolio-summary {
- 
     text-align: center; /* Center text for mobile */
 }
 
-
 .portfolio-summary-number {
-    /* Styles for the project number */
     color: var(--primary-color); /* Adjust as needed */
 }
-.active-filter {
 
+.active-filter {
     border-bottom: 2px solid var(--primary-color); /* Add primary color bottom border */
 }
-.portfolio-filter:hover {
 
+.portfolio-filter:hover {
     color: var(--primary-color); /* Change text color on hover */
     border-bottom: 2px solid gray; /* Gray border on hover */
 }
+
+/* Quick Stand Animation Styles */
+.portfolio-items {
+    position: relative;
+}
+
 .fade-enter {
     opacity: 0;
-    transform: translateX(-100%); /* Start from the left */
-  }
-  
-  .fade-enter-active {
+    transform: translateY(30px) scale(0.9); /* Start lower and smaller */
+}
+
+.fade-enter-active {
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 500ms ease, transform 500ms ease;
-  }
-  
-  .fade-exit {
+    transform: translateY(0) scale(1);
+    transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.fade-exit {
     opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .fade-exit-active {
+    transform: translateY(0) scale(1);
+}
+
+.fade-exit-active {
     opacity: 0;
-    transform: translateX(100%); /* Move out to the right */
-    transition: opacity 500ms ease, transform 500ms ease;
-  }
-  
+    transform: translateY(-30px) scale(0.9); /* Exit upwards and shrink */
+    transition: opacity 300ms ease, transform 300ms ease;
+}
+
+/* Optional: Add a bounce effect to the enter transition */
+.fade-enter-active {
+    animation: bounceIn 0.5s forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(30px) scale(0.9);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}

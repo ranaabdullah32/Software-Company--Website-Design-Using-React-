@@ -1,0 +1,133 @@
+.satisfied-customer-container {
+    display: flex;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+     box-sizing: border-box;
+     margin-left: 10%;
+  }
+  
+  .satisfied-customer-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+  
+  .satisfied-customer-left h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  padding-left: 10%;
+  }
+  
+  .satisfied-customer-right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    
+  }
+  
+  .testimonial-slider {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .testimonial-content {
+    text-align: center;
+    padding: 20px;
+
+  }
+  
+  .testimonial-content .quote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 auto;
+
+    color: #bbb;
+  }
+  
+  .quote span {
+    font-size: 2rem;
+    vertical-align: middle;
+    color: #fff;
+   
+  }
+  svg.svg-inline--fa.fa-quote-right.quote-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .testimonial-profile {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .satisfied-customer-container {
+      flex-direction: column;
+      padding: 20px;
+      margin-left: 0;
+    }
+  
+    .satisfied-customer-left, .satisfied-customer-right {
+      width: 100%;
+      justify-content: center;
+      padding: 10px 0;
+    }
+   .testimonial-slider{
+    width: 100%;
+   }
+    .satisfied-customer-left h2 {
+      font-size: 1.5rem;
+      padding-left: 0px;
+      padding-top: 10%;
+    }
+  
+    .quote {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+  
+    .profile-image {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .profile-name {
+      font-size: 0.9rem;
+    }
+  }
+  .sponsors-container {
+    margin-left: 10%;
+    color: white;
+   
+text-align: center;
+  }
+   .sponsor-image {
+    width: 100%; /* Adjust according to your design */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10px; /* Space between images */
+  }
+  

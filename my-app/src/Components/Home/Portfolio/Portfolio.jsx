@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "bootstrap/dist/css/bootstrap.min.css";
 import p1 from '../../../Images/p1.jpg';
 import p2 from '../../../Images/p2.jpg';
@@ -31,7 +32,6 @@ const Portfolio = () => {
       <h1 className="portfolio-heading mb-3">OUR</h1>
       <h2 className="portfolio-title mb-4">AMAZING PORTFOLIO</h2>
 
-      {/* Filter Links */}
       <Row className="mb-4">
         <Col>
           {filters.map((filter) => (
@@ -52,21 +52,28 @@ const Portfolio = () => {
         </Col>
       </Row>
 
-      {/* Portfolio Items */}
-      <Row className="g-4">
-        {filteredItems.map((portfolio, idx) => (
-          <Col md={6} key={idx}>
-            <div className="portfolio-item">
-              <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
-              <div className="portfolio-overlay">
-                <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
-              </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
+      {/* Portfolio Items with TransitionGroup */}
+      <TransitionGroup className="portfolio-items">
+        <CSSTransition
+          key={activeFilter}
+          classNames="fade"
+          timeout={300}
+        >
+          <Row className="g-4">
+            {filteredItems.map((portfolio, idx) => (
+              <Col md={6} key={idx}>
+                <div className="portfolio-item">
+                  <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
+                  <div className="portfolio-overlay">
+                    <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </CSSTransition>
+      </TransitionGroup>
 
-      {/* Project Completed Text - Only visible when "ALL" is active */}
       {activeFilter === "ALL" && (
         <Row className="portfolio-summary">
           <Col md={6} className="text-center text-lg-left">

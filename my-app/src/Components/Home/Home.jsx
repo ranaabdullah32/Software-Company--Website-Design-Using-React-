@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Portfolio from "./Portfolio/Portfolio";
+import SatisfiedCustomer from './SatisfiedCustomer/SatisfiedCustomer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -17,13 +18,14 @@ import "react-circular-progressbar/dist/styles.css";
 import { useInView } from "react-intersection-observer";
 import "./Home.css"; // Importing the custom CSS file
 import { Swiper, SwiperSlide} from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import  teamone from '../../Images/team1.jpg';
 import  teamtwo from '../../Images/team2.jpg';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Home = () => {
@@ -399,8 +401,9 @@ const Home = () => {
       </Container>
     </section>
 <Portfolio/>
+<SatisfiedCustomer/>
       </>
-    
+
   );
 };
 
