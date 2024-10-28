@@ -9,6 +9,7 @@ const Home = lazy(() => import('./Components/Home/Home'));
 const About = lazy(() => import('./Components/About/About'));
 const Contact = lazy(() => import('./Components/Contact/Contact'));
 
+
 const App = () => {
   return (
       <Suspense fallback={<div>Loading...</div>}>
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-  
+       <Footer/>
       </Suspense>
   );
 };

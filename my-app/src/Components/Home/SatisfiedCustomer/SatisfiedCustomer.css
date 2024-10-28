@@ -122,12 +122,19 @@
   .sponsors-container {
     margin-left: 10%;
     color: white;
-   
-text-align: center;
-  }
-   .sponsor-image {
-    width: 100%; /* Adjust according to your design */
-    height: auto; /* Maintain aspect ratio */
-    padding: 10px; /* Space between images */
+    text-align: center;
+    padding: 40px 0; /* Add top and bottom padding */
   }
   
+  .sponsor-image {
+    width: 122px; /* Adjust according to your design */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10px; /* Space between images */
+    max-width: 100%;
+    transition: filter 0.3s ease; /* Smooth transition for the filter */
+    filter: grayscale(100%); /* Start with grayscale */
+  }
+  
+  .sponsor-image:hover {
+    filter: grayscale(0%); /* Remove grayscale on hover */
+  }

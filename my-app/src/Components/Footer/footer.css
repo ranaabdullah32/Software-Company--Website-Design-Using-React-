@@ -1,0 +1,46 @@
+.footer {
+    background-color: #fff;
+    color: gray;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer .branch {
+    margin-bottom: 15px;
+}
+
+.footer .branch-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centering items */
+}
+
+.footer .branch-item p {
+    margin-bottom: 0; /* Prevents extra spacing */
+}
+
+.footer-bottom {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-bottom .social-icon {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.footer-bottom .copyright {
+    color: white;
+    margin-right: 20%; /* Ensures copyright text is white */
+}
+.footer .justify-content-start{
+    margin-left: 10%;
+}
+.text-center svg.svg-inline--fa {
+    color: #202020;
+    font-size: 38px;
+    margin-bottom: 8px !important; 
+    margin-right: 20px !important;
+    font-size: 30px;
+}

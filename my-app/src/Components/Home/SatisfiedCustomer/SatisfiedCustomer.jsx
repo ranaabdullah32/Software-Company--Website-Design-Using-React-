@@ -12,6 +12,9 @@ import sama from '../../../Images/sama.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
+import "swiper/swiper-bundle.css"; // Ensure this is included for proper styling
+
+
 const SatisfiedCustomer = () => {
   return (
     <>
@@ -68,35 +71,33 @@ const SatisfiedCustomer = () => {
 
       {/* Sponsors Section */}
       <div className="sponsors-container">
-  <Swiper
-    spaceBetween={20}
-    slidesPerView={6} // Change this to 6 for larger screens
-    loop={true} // Ensure the slider can loop through slides
-    breakpoints={{
-      1200: {
-        slidesPerView: 6, // 6 slides for large screens
-      },
-      992: {
-        slidesPerView: 4, // 4 slides for medium screens
-      },
-      768: {
-        slidesPerView: 3, // 3 slides for small to medium screens
-      },
-      576: {
-        slidesPerView: 2, // 2 slides for small screens
-      },
-      480: {
-        slidesPerView: 1, // 1 slide for extra small screens
-      },
-    }}
-    className="sponsors-slider"
-  >
+<Swiper
+  spaceBetween={0}
+  slidesPerView={6} // Change this to 6 for larger screens
+  loop={true} // Ensure the slider can loop through slides
+
+  breakpoints={{
+    912: {
+      slidesPerView: 6,
+    },
+    500: {
+      slidesPerView: 4,
+    },
+    0: { // This will apply to all screens less than 500
+      slidesPerView: 2,
+    },
+  }}
+  
+  className="sponsors-slider"
+>
+
     <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
     <SwiperSlide><img src={dream} alt="Dream" className="sponsor-image" /></SwiperSlide>
     <SwiperSlide><img src={glass} alt="Glass" className="sponsor-image" /></SwiperSlide>
     <SwiperSlide><img src={laptop} alt="Laptop" className="sponsor-image" /></SwiperSlide>
     <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
     <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
+    <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
   </Swiper>
 </div>
 
