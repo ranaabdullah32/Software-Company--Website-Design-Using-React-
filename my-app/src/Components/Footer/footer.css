@@ -1,46 +1,129 @@
 .footer {
-    background-color: #fff;
-    color: gray;
+    text-align: center;
     padding: 20px 0;
-    font-size: 14px;
+    background-image: url('../../Images/footerbg.jpg'); /* Update this path to match your image location */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer .container-fluid{
+    padding: 0!important;
+}
+.footer__branches-container {
+    padding: 7% 2%;
+    color: #000;
 }
 
-.footer .branch {
-    margin-bottom: 15px;
+.footer__heading {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: center;
 }
 
-.footer .branch-item {
+.footer__branches-row {
     display: flex;
-    align-items: center;
-    justify-content: center; /* Centering items */
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.footer .branch-item p {
-    margin-bottom: 0; /* Prevents extra spacing */
+.footer__branch {
+    text-align: left;
+    width: 30%;
+    min-width: 200px;
+    margin: 10px 0;
 }
 
-.footer-bottom {
-    background-color: #000;
-    color: white;
-    padding: 20px 0;
+.footer__branch-item {
+    display: flex;
+    margin: 8% 0; /* Adds spacing between items */
 }
 
-.footer-bottom .social-icon {
+.footer__icon {
+    margin-right: 5%;
+    color: #000;
+}
+
+.footer__branch-item p {
+    font-size: 13px;
+    color: gray;
+}
+
+/* Footer Bottom Section */
+.footer__bottom {
+    background-color: #222;
     color: #fff;
-    margin: 0 10px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.footer-bottom .copyright {
-    color: white;
-    margin-right: 20%; /* Ensures copyright text is white */
+.footer__social-container {
+    display: flex;
+    gap: 25px;
+    margin: 10px 0;
+    position: relative; /* This allows positioning for child elements */
 }
-.footer .justify-content-start{
-    margin-left: 10%;
+
+.footer__social-icon {
+    position: relative; /* Positioning to allow for the hover effect */
 }
-.text-center svg.svg-inline--fa {
-    color: #202020;
-    font-size: 38px;
-    margin-bottom: 8px !important; 
-    margin-right: 20px !important;
-    font-size: 30px;
+
+.footer__social-icon:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px; /* Circle size */
+    height: 40px; /* Circle size */
+    background-color: var(--primary-color); /* Use your defined primary color */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%); /* Center the circle behind the icon */
+    z-index: 0; /* Make sure the circle is below the icon */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Ensure the FontAwesomeIcon is above the circle */
+.footer__social-icon svg {
+    position: relative; /* Maintain the icon on top */
+    z-index: 1; /* Icon above the circle */
+}
+
+/* Right align copyright text */
+.footer__copyright {
+    font-size: 0.9em;
+    color: #fff;
+    margin-top: 1.5%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 912px) {
+    .footer__branch-item p {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__social-container {
+        order: unset; /* Revert order on small screens */
+        justify-content: center;
+    }
+
+    .footer__branch {
+        margin: 1%;
+    }
+
+    .footer__branches-row {
+        justify-content: flex-start;
+    }
+    .footer__branch-item {
+     margin: 2% 0;
+    }
 }

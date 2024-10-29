@@ -5,8 +5,8 @@
     padding: 20px;
      box-sizing: border-box;
      margin-left: 10%;
+ 
   }
-  
   .satisfied-customer-left {
     flex: 1;
     display: flex;
@@ -121,9 +121,10 @@
   }
   .sponsors-container {
     margin-left: 10%;
+    margin-right: 5%;
     color: white;
     text-align: center;
-    padding: 40px 0; /* Add top and bottom padding */
+    padding: 40px 0;
   }
   
   .sponsor-image {

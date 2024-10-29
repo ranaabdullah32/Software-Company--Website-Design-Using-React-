@@ -84,41 +84,25 @@
     position: relative;
 }
 
+/* Example CSS for transitions */
 .fade-enter {
     opacity: 0;
-    transform: translateY(30px) scale(0.9); /* Start lower and smaller */
+    transform: translateY(20px);
 }
 
 .fade-enter-active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     transition: opacity 300ms ease, transform 300ms ease;
 }
 
 .fade-exit {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 .fade-exit-active {
     opacity: 0;
-    transform: translateY(-30px) scale(0.9); /* Exit upwards and shrink */
+    transform: translateY(-20px);
     transition: opacity 300ms ease, transform 300ms ease;
-}
-
-/* Optional: Add a bounce effect to the enter transition */
-.fade-enter-active {
-    animation: bounceIn 0.5s forwards;
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: translateY(30px) scale(0.9);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
 }

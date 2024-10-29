@@ -188,6 +188,7 @@ transition: width 0.3s ease, background-color 0.3s ease;
     left: 0; /* Align to the left */
     bottom: 0; /* Position it directly at the bottom of the text */
     transition: width 0.3s ease; /* Smooth transition */
+    max-width: 18%;
 }
 
 .side-menu .navbar-nav .nav-link {

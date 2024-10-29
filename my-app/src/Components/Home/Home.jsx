@@ -25,6 +25,8 @@ import  teamtwo from '../../Images/team2.jpg';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import Blog from "./OurBlog/Blog";
+import Footer from "../Footer/footer";
 
 
 
@@ -402,6 +404,8 @@ const Home = () => {
     </section>
 <Portfolio/>
 <SatisfiedCustomer/>
+<Blog/>
+<Footer/>
       </>
 
   );
