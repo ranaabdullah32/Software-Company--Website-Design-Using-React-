@@ -6,6 +6,20 @@ body {
     max-width: 100%;
     height: auto;
 }
+.navbar {
+    position: relative; /* Default position */
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.scrolled {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--white-color);
+}
 /* Header Navigation Styles */
 header .main-navigation {
     padding-top: 30px;
@@ -303,7 +317,7 @@ transition: width 0.3s ease, background-color 0.3s ease;
         display: none;
     }
 .side-menu .btn-close {
-        top: 5%;
+        top: 3.5%;
         right: 7%;
     }
 .side-menu .navbar-nav .nav-link {

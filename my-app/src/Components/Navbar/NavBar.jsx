@@ -12,8 +12,24 @@ const NavBar = () => {
     const [show, setShow] = useState(false);
     const [hoveredItem, setHoveredItem] = useState(null);
     const [currentCounts, setCurrentCounts] = useState([1, 2, 3, 4, 5, 6]); // Initial counts
+    const [isScrolled, setIsScrolled] = useState(false); // New state for scroll
 
     const handleToggle = () => setShow(!show);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 200) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         let interval;
@@ -72,8 +88,8 @@ const NavBar = () => {
 
     return (
         <>
-            <header className="main-navigation">
-                <CustomCursor/>
+            <header className={`main-navigation ${isScrolled ? 'scrolled' : ''}`}>
+                <CustomCursor />
                 <div className="color-lines position-relative">
                     <div className="container">
                         <div className="row">
@@ -83,10 +99,10 @@ const NavBar = () => {
                     <div className="color-line-overlay"></div>
                 </div>
                 <div className="container">
-                    <Navbar expand="lg" className="navbar">
+                    <Navbar expand="lg" className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                         <Navbar.Brand className="simple-nav-logo col-6 col-lg-3" href="#">
                             <img src={logo} alt="Logo" style={{ width: '100%', height: 'auto', maxWidth: '300px' }} />
-                        </Navbar.Brand>
+                        </Navbar.Brand >
                         <div className="nav-items-container">
                             <Nav className="ml-auto col-8 col-lg-9">
                                 {['HOME', 'ABOUT', 'SERVICES', 'PORTFOLIO', 'TESTIMONIALS', 'CONTACT'].map((item, index) => (
