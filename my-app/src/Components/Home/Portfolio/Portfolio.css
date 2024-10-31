@@ -1,97 +1,117 @@
 .portfolio-container {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 .portfolio-heading {
-    font-weight: bold;
-    font-size: 2.5rem;
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 .portfolio-title {
-    font-weight: bold;
-    font-size: 2rem;
-    color: black;
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
 }
 
 .portfolio-filter {
-    color: #202020;
-    font-size: 13px;
-    font-weight: 600;
-    margin: 0 15px 0 0;
-    padding: 0;
-    transition: color 0.3s;
+  color: #202020;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 15px 0 0;
+  padding: 0;
+  transition: color 0.3s;
 }
 
 .portfolio-filter:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
-.active-filter {
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.portfolio-item {
-    position: relative;
-    overflow: hidden;
-    border: 5px solid lightgray;
-    transition: transform 0.4s ease;
-}
-
-.portfolio-image {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-image {
-    transform: scale(1.1);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    bottom: 5%;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 0.9;
-}
-
-.portfolio-overlay-icon {
-    font-size: 80px;
-    color: #fff;
+.portfolio-filter.active-filter {
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .portfolio-items {
-    transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.fade-out {
-    opacity: 0;
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid lightgray;
+  transition: transform 0.4s ease;
 }
 
-.fade-in {
-    opacity: 1;
+.portfolio-item-inner {
+  position: relative; /* Ensure overlay is positioned correctly */
 }
 
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 0.9;
+}
+
+.portfolio-overlay-icon {
+  font-size: 80px;
+  color: #fff;
+}
+
+/* Fade transition effects */
+.portfolio-items .fade-enter {
+  opacity: 0;
+  transform: translateY(20px); /* Move slightly down before entering */
+}
+
+.portfolio-items .fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms; /* Duration for the fade and movement */
+}
+
+.portfolio-items .fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-items .fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px); /* Move slightly up while exiting */
+  transition: opacity 300ms, transform 300ms; /* Duration for the fade and movement */
+}
+
+/* Responsive adjustments */
 @media only screen and (max-width: 820px) {
-    .portfolio-heading {
-        font-size: 2rem;
-    }
+  .portfolio-heading {
+    font-size: 2rem;
+  }
 
-    .portfolio-title {
-        font-size: 1.6rem;
-    }
+  .portfolio-title {
+    font-size: 1.6rem;
+  }
 
-    .portfolio-filter {
-        margin: 0 8px 0 0;
-    }
+  .portfolio-filter {
+    margin: 0 8px 0 0;
+  }
 }

@@ -31,15 +31,15 @@
     margin: 10px 0;
 }
 .footer__branch-item {
-    display: flex;
-    margin: 8% 0; /* Adds spacing between items */
+   margin: 8% 0; /* Adds spacing between items */
+   display: flex;
 }
 .footer__icon {
     margin-right: 5%;
     color: #000;
 }
 .footer__branch-item p {
-    font-size: 13px;
+    font-size: 12px;
     color: gray;
 }
 /* Footer Bottom Section */
@@ -90,8 +90,9 @@
     .footer__branch-item p {
         font-size: 8px;
     }
+ 
 }
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     .footer__bottom {
         flex-direction: column;
         text-align: center;
@@ -111,5 +112,9 @@
     }
     .footer__branch-item {
      margin: 2% 0;
+     display: block ;
+    text-align: center ;
     }
+    
+
 }

@@ -72,7 +72,6 @@ const Home = () => {
   
 
 
-
  return (
     <>
       <div className="home-container" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>

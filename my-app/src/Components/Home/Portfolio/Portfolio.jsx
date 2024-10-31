@@ -8,6 +8,7 @@ import p3 from '../../../Images/p3.jpg';
 import p4 from '../../../Images/p4.jpg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './Portfolio.css';
 
 const Portfolio = () => {
@@ -53,18 +54,24 @@ const Portfolio = () => {
         </Col>
       </Row>
 
-      <Row className={`portfolio-items g-4 ${fade ? 'fade-out' : 'fade-in'}`}>
+      <TransitionGroup className={`portfolio-items g-4 ${fade ? 'fade-out' : 'fade-in'}`}>
         {filteredItems.map((portfolio, idx) => (
-          <Col md={6} key={idx} className={`portfolio-item ${portfolio.categories.join(' ')}`}>
-            <div className="portfolio-item-inner">
-              <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
-              <div className="portfolio-overlay">
-                <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
+          <CSSTransition
+            key={idx}
+            timeout={300}
+            classNames="fade"
+          >
+            <Col md={6} className={`portfolio-item ${portfolio.categories.join(' ')}`}>
+              <div className="portfolio-item-inner">
+                <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
+                <div className="portfolio-overlay">
+                  <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
+                </div>
               </div>
-            </div>
-          </Col>
+            </Col>
+          </CSSTransition>
         ))}
-      </Row>
+      </TransitionGroup>
     </Container>
   );
 };

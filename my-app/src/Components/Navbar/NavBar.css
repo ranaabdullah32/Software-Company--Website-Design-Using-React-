@@ -9,7 +9,7 @@ body {
 .navbar {
     position: relative; /* Default position */
     transition: background-color 0.3s ease;
-    z-index: 1000; /* Ensure it's on top of other content */
+    z-index: 1002; /* Ensure it's on top of other content */
 }
 
 .scrolled {
@@ -17,9 +17,11 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    background-color: var(--white-color);
+    z-index: 900;
+  background-color: var(--white-color);
+
 }
+
 /* Header Navigation Styles */
 header .main-navigation {
     padding-top: 30px;

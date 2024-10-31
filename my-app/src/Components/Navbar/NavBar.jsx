@@ -89,7 +89,7 @@ const NavBar = () => {
     return (
         <>
             <header className={`main-navigation ${isScrolled ? 'scrolled' : ''}`}>
-                <CustomCursor />
+            <CustomCursor />
                 <div className="color-lines position-relative">
                     <div className="container">
                         <div className="row">
@@ -99,6 +99,7 @@ const NavBar = () => {
                     <div className="color-line-overlay"></div>
                 </div>
                 <div className="container">
+          
                     <Navbar expand="lg" className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                         <Navbar.Brand className="simple-nav-logo col-6 col-lg-3" href="#">
                             <img src={logo} alt="Logo" style={{ width: '100%', height: 'auto', maxWidth: '300px' }} />

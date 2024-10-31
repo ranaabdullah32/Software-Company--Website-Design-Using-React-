@@ -1,0 +1,66 @@
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 152, 219, 0.8); /* Semi-transparent primary color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 242424;
+  animation: fadeOut 1s ease-out 2.5s forwards; /* Fades out after 2.5s */
+}
+
+.preloader-circle {
+  width: 100px; /* Circle diameter */
+  height: 100px; /* Circle diameter */
+  position: relative; /* Positioning for child elements */
+  display: flex;
+  align-items: center; /* Center logo vertically */
+  justify-content: center; /* Center logo horizontally */
+}
+
+.circle-background {
+  width: 100%; /* Fill the circle */
+  height: 100%; /* Fill the circle */
+  border-radius: 50%; /* Makes it circular */
+  position: absolute; /* Position in the center */
+  z-index: 1; /* Ensure it stays behind the moving border */
+}
+
+.circle-moving {
+  width: 100%; /* Fill the circle */
+  height: 100%; /* Fill the circle */
+  border: 1px solid  lightgray; /* Create a transparent border */
+  border-top-color: darkgray; /* Top border to show white */
+  border-radius: 50%; /* Makes it circular */
+  position: absolute; /* Position to stay in circle */
+  top: 0;
+  left: 0;
+  animation: spin 1s linear infinite; /* Rotate the moving border */
+
+}
+
+.preloader-logo {
+
+
+  position: absolute; /* Keep the logo centered */
+  z-index: 2; /* Ensure logo stays above the circle */
+}
+
+@keyframes fadeOut {
+  to {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg); /* Starting point for rotation */
+  }
+  to {
+      transform: rotate(360deg); /* Complete rotation */
+  }
+}
