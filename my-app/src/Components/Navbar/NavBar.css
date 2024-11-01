@@ -91,6 +91,7 @@ header .main-navigation nav .navbar-nav .nav-item .nav-link span {
     right: 0px;
     transition: all .3s linear;
     width: 36px;
+    position: absolute;
 }
 .sidemenu_btn span {
     background: var(--secondary-color);
@@ -310,7 +311,7 @@ transition: width 0.3s ease, background-color 0.3s ease;
     top: 0;
 }
 /** Media Queries **/
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 996px) {
     .navbar-toggler {
         display: none !important;
     }

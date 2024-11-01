@@ -4,7 +4,6 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css"; 
 import NavBar from './Components/Navbar/NavBar'; 
 import ScrollToTopButton from './Components/ScrollToTopButton/ScrollToTopButton';
-import Footer from './Components/Footer/footer';
 import Preloader from './Components/PreLoader/Preloader';
 // Lazy load components
 const Home = lazy(() => import('./Components/Home/Home'));

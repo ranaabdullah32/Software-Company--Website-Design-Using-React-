@@ -35,6 +35,13 @@ const Home = () => {
   const [animationTriggered, setAnimationTriggered] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
+  const { ref: leftContentRef, inView: leftContentInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: rightContentRef, inView: rightContentInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: aboutLeftRef, inView: aboutLeftInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: aboutRightRef, inView: aboutRightInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: teamLeftRef, inView: teamLeftInView } = useInView({ threshold: 0.3, triggerOnce: true });
+  const { ref: teamRightRef, inView: teamRightInView } = useInView({ threshold: 0.3, triggerOnce: true });
+
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
@@ -78,7 +85,10 @@ const Home = () => {
         <div className="inner-bg-overlay"></div>
         <div className="row">
           {/* Left side for text content */}
-          <div className="col-12 col-lg-6 left-content">
+          <div
+          className={`col-12 col-lg-6 left-content ${leftContentInView ? 'slide-in-left' : ''}`}
+          ref={leftContentRef}
+        >
             <div className="social-icons">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebookF} />
@@ -100,6 +110,7 @@ const Home = () => {
                       Spark Solutionz is a Pakistan-based web application development company providing a wide range of web development solutions locally and globally. We pride ourselves on offering innovative and unique web application development solutions to meet all business needs.
                     </p>
                     <button className="learn-more-btn">
+                    
                       <span>LEARN MORE</span>
                     </button>
                   </div>
@@ -109,7 +120,10 @@ const Home = () => {
           </div>
 
           {/* Right side for images */}
-          <div className="col-12 col-lg-6 right-content">
+          <div
+          className={`col-12 col-lg-6 right-content ${rightContentInView ? 'slide-in-right' : ''}`}
+          ref={rightContentRef}
+        >
             <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false} className="vertical-carousel">
               {[0, 1, 2].map((i) => (
                 <Carousel.Item key={i}>
@@ -139,7 +153,11 @@ const Home = () => {
         <div className="about-overlay"></div>
         <Container className="service-container">
           <Row className="flex-column flex-md-row">
-            <Col md={6} className="service-area">
+          <Col
+              md={6}
+              className={`service-area ${aboutLeftInView ? 'slide-in-left' : ''}`}
+              ref={aboutLeftRef}
+            >
               <Row className="g-4">
                 <Col xs={12} md={6} className="text-center">
                   <img src={weblogo} alt="Web Development" className="service-icon" />
@@ -167,7 +185,11 @@ const Home = () => {
                 </Col>
               </Row>
             </Col>
-            <Col md={6} className="description-area d-flex flex-column">
+            <Col
+              md={6}
+              className={`description-area d-flex flex-column ${aboutRightInView ? 'slide-in-right' : ''}`}
+              ref={aboutRightRef}
+            >
               <h4 className="title">
                 <p>OUR</p>
                 <span className="service-title">SERVICES</span>
@@ -253,12 +275,20 @@ const Home = () => {
      <section className="amazing-team">
       <Container>
         <Row className="justify-content-center">
-          <Col lg={5} md={6} className="text-right team-heading">
+        <Col
+  lg={5}
+  md={6}
+  className={`team-heading text-right ${teamLeftInView ? 'slide-in-left' : ''}`}
+  ref={teamLeftRef}
+>
             <h2>WE HAVE AMAZING TEAM</h2>
           </Col>
 
           <Col lg={7} md={6}>
-            <Row className="Teamimage-section">
+          <Row
+                className={`Teamimage-section ${teamRightInView ? 'slide-in-right' : ''}`}
+                ref={teamRightRef}
+              >
               <Swiper
                 modules={[Navigation]}
                 spaceBetween={5}

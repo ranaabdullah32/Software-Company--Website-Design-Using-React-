@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./SatisfiedCustomer.css";
@@ -13,20 +13,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
 import "swiper/swiper-bundle.css"; // Ensure this is included for proper styling
-
+import { Autoplay } from "swiper/modules";
 
 const SatisfiedCustomer = () => {
+  const [inView, setInView] = useState(false);
+  const containerRef = useRef(null);
+
+  // Intersection Observer to track when the section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.unobserve(entry.target); // Stop observing after it enters view
+        }
+      },
+      { threshold: 0.3 } // Trigger when 10% of the target is visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <>
-      <div className="satisfied-customer-container">
-        <div className="satisfied-customer-left">
+    <div className="satisfied-customer-section" ref={containerRef}>
+      <div className={`satisfied-customer-container ${inView ? 'visible' : ''}`}>
+        <div className={`satisfied-customer-left ${inView ? 'slide-in-left' : ''}`}>
           <h2>SATISFIED CUSTOMERS</h2>
         </div>
-        <div className="satisfied-customer-right">
+        <div className={`satisfied-customer-right ${inView ? 'slide-in-right' : ''}`}>
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
+            autoplay={{ // Enable autoplay for the testimonial slider
+              delay: 3000, // Delay in milliseconds between transitions
+              disableOnInteraction: false, // Allow interaction without stopping autoplay
+            }}
+            modules={[Autoplay]}
             className="testimonial-slider"
           >
             <SwiperSlide>
@@ -71,37 +102,38 @@ const SatisfiedCustomer = () => {
 
       {/* Sponsors Section */}
       <div className="sponsors-container">
-<Swiper
-  spaceBetween={0}
-  slidesPerView={6} // Change this to 6 for larger screens
-  loop={true} // Ensure the slider can loop through slides
-
-  breakpoints={{
-    912: {
-      slidesPerView: 6,
-    },
-    500: {
-      slidesPerView: 4,
-    },
-    0: { // This will apply to all screens less than 500
-      slidesPerView: 2,
-    },
-  }}
-  
-  className="sponsors-slider"
->
-
-    <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={dream} alt="Dream" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={glass} alt="Glass" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={laptop} alt="Laptop" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
-    <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
-  </Swiper>
-</div>
-
-    </>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={6} // Change this to 6 for larger screens
+          loop={true} // Ensure the slider can loop through slides
+          autoplay={{ // Enable autoplay for the testimonial slider
+            delay: 3000, // Delay in milliseconds between transitions
+            disableOnInteraction: false, // Allow interaction without stopping autoplay
+          }}
+          modules={[Autoplay]}
+          breakpoints={{
+            912: {
+              slidesPerView: 6,
+            },
+            500: {
+              slidesPerView: 4,
+            },
+            0: { // This will apply to all screens less than 500
+              slidesPerView: 2,
+            },
+          }}
+          className="sponsors-slider"
+        >
+          <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={dream} alt="Dream" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={glass} alt="Glass" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={laptop} alt="Laptop" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={dct} alt="DCT" className="sponsor-image" /></SwiperSlide>
+          <SwiperSlide><img src={sama} alt="Sama" className="sponsor-image" /></SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
   );
 };
 

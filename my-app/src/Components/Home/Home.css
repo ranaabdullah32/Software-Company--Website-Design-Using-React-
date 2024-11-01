@@ -10,6 +10,7 @@
 }
 
 
+
 .home-container .inner-bg-overlay {
   background-color: var(--primary-color);
   bottom: 0;
@@ -95,8 +96,13 @@
   font-size: 13px;
   font-weight: 500;
   overflow: hidden; /* Hide overflow to allow corner fill */
+  color: var(--white-color); /* Default text color */
+  cursor: pointer; /* Change cursor to pointer */
+  outline: none; /* Remove outline */
   transition: color 0.3s ease; /* Smooth transition for text color */
 }
+
+
 
 .learn-more-btn span {
   position: relative; /* Position text relative to the button */
@@ -107,25 +113,44 @@
 .learn-more-btn::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
   width: 100%; /* Cover the full width */
   height: 100%; /* Cover the full height */
   background-color: var(--secondary-color); /* Fill color */
-  transform: translate(-100%, -100%); /* Start off-screen diagonally */
+  transform: translate(-100%, 100%); /* Start off-screen from left bottom */
   transition: transform 0.5s ease; /* Smooth transition for filling effect */
   z-index: 0; /* Place behind the text */
-
-
 }
-.learn-more-btn:hover{
-  border: none;
+
+.learn-more-btn:hover .learnbtn{
+  transform: translateY(0) scale(2);
 }
 
 .learn-more-btn:hover::before {
-  transform: translate(0, 0); /* Move to fill the button on hover */
+  animation: fillAnimation 0.5s forwards; /* Fill effect on hover */
+}
 
+.learn-more-btn:not(:hover)::before {
+  animation: disappearAnimation 0.5s forwards; /* Disappear effect when not hovered */
+}
 
+@keyframes fillAnimation {
+  0% {
+    transform: translate(-100%, 100%); /* Start off-screen (left bottom) */
+  }
+  100% {
+    transform: translate(0, 0); /* Move to fill the button */
+  }
+}
+
+@keyframes disappearAnimation {
+  0% {
+    transform: translate(0, 0); /* Start from filled position */
+  }
+  100% {
+    transform: translate(100%, -100%); /* Move out of view (right top) */
+  }
 }
 
 .learn-more-btn:hover span {
@@ -650,18 +675,35 @@ font-weight: 700;
 
 /*Animations*/
 /* Home.css */
+/* Slide-in from the left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-.home-container .left-content
-{
-  transition: transform 0.5s ease-out;
-}
-.home-container .right-content{
-  transition: transform 0.5s ease-out;
-}
-.home-container .left-content.animate-left {
-  transform: translateX(-20px);
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.home-container .right-content.animate-right {
-  transform: translateX(20px);
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
 }
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+
