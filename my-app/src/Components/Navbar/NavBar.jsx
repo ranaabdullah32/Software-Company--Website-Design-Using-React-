@@ -33,8 +33,7 @@ const NavBar = () => {
 
     useEffect(() => {
         let interval;
-
-        if (hoveredItem !== null) {
+      if (hoveredItem !== null) {
             interval = setInterval(() => {
                 setCurrentCounts((prevCounts) => {
                     const newCounts = [...prevCounts];
@@ -145,7 +144,7 @@ const NavBar = () => {
                             </Link>
                         </div>
                         <div className="col-12 col-lg-8">
-                            <nav className="side-nav w-100">
+                        <nav className={`side-nav w-100 ${show ? 'animate-nav-items' : ''}`}>
                                 <ul className="navbar-nav">
                                     <li className="nav-item"><a className="nav-link home" href="#home">HOME</a></li>
                                     <li className="nav-item"><a className="nav-link home" href="#about">ABOUT</a></li>

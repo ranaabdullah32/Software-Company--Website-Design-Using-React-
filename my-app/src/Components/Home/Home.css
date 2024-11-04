@@ -73,6 +73,7 @@
 
 .home-container .social-icons a:hover {
   transform: translateY(-20px);
+  
 
 }
 
@@ -155,6 +156,7 @@
 
 .learn-more-btn:hover span {
   color: var(--white-color); /* Change text color on hover */
+  
 }
 
 .slider-controls {

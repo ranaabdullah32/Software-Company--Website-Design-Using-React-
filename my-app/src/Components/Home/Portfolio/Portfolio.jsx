@@ -16,13 +16,13 @@ const Portfolio = () => {
   const [fade, setFade] = useState(false);
 
   const portfolioItems = [
-    { title: "Fitness Website", imgSrc: p1, categories: ["ALL", "DESIGN", "HTML_CSS", "DEVELOPMENT"] },
+    { title: "Fitness Website", imgSrc: p1, categories: ["ALL", "DESIGN", "HTML&CSS", "DEVELOPMENT"] },
     { title: "Smartwatch Website", imgSrc: p2, categories: ["ALL", "DESIGN", "SEO"] },
     { title: "Services Website", imgSrc: p3, categories: ["ALL"] },
-    { title: "Headphones Website", imgSrc: p4, categories: ["ALL", "DESIGN", "HTML_CSS", "SEO", "DEVELOPMENT"] },
+    { title: "Headphones Website", imgSrc: p4, categories: ["ALL", "DESIGN", "HTML&CSS", "SEO", "DEVELOPMENT"] },
   ];
 
-  const filters = ["ALL", "DESIGN", "HTML_CSS", "SEO", "DEVELOPMENT"];
+  const filters = ["ALL", "DESIGN", "HTML&CSS", "SEO", "DEVELOPMENT"];
 
   const handleFilterClick = (filter) => {
     setFade(true);
@@ -55,22 +55,24 @@ const Portfolio = () => {
       </Row>
 
       <TransitionGroup className={`portfolio-items g-4 ${fade ? 'fade-out' : 'fade-in'}`}>
-        {filteredItems.map((portfolio, idx) => (
-          <CSSTransition
-            key={idx}
-            timeout={300}
-            classNames="fade"
-          >
-            <Col md={6} className={`portfolio-item ${portfolio.categories.join(' ')}`}>
-              <div className="portfolio-item-inner">
-                <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
-                <div className="portfolio-overlay">
-                  <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
+        <Row>
+          {filteredItems.map((portfolio, idx) => (
+            <CSSTransition
+              key={idx}
+              timeout={300}
+              classNames="fade"
+            >
+              <Col xs={10} sm={12} md={5} lg={5} className={`portfolio-item ${portfolio.categories.join(' ')}`}>
+                <div className="portfolio-item-inner">
+                  <img src={portfolio.imgSrc} alt={portfolio.title} className="portfolio-image" />
+                  <div className="portfolio-overlay">
+                    <FontAwesomeIcon icon={faPlus} className="portfolio-overlay-icon" />
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </CSSTransition>
-        ))}
+              </Col>
+            </CSSTransition>
+          ))}
+        </Row>
       </TransitionGroup>
     </Container>
   );

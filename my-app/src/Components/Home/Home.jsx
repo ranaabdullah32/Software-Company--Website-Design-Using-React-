@@ -112,6 +112,7 @@ const Home = () => {
                     <button className="learn-more-btn">
                     
                       <span>LEARN MORE</span>
+                    
                     </button>
                   </div>
                 </Carousel.Item>

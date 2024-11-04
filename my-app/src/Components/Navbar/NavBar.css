@@ -12,6 +12,8 @@ body {
     z-index: 1002; /* Ensure it's on top of other content */
 }
 
+
+
 .scrolled {
     position: sticky;
     top: 0;
@@ -21,7 +23,15 @@ body {
   background-color: var(--white-color);
 
 }
+.scrolled .color-line-overlay {
+    background-color: var(--primary-color);
 
+    left: 0%;
+}
+.scrolled .bg-color {
+    background-color: var(--primary-color);
+
+}
 /* Header Navigation Styles */
 header .main-navigation {
     padding-top: 30px;
@@ -335,5 +345,53 @@ transition: width 0.3s ease, background-color 0.3s ease;
 
     .text-white {
         font-size: 14px;
+    }
+}
+.link-fade {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.link-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.side-menu .side-nav .nav-item {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.side-menu .side-nav .nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.side-menu .side-nav .nav-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.side-menu .side-nav .nav-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.side-menu .side-nav .nav-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.side-menu .side-nav .nav-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.side-menu .side-nav .nav-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.side-menu .side-nav .nav-item:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -39,7 +39,8 @@ const Footer = () => {
                 className={`footer__branches-container ${isVisible ? 'slide-in-left' : ''}`}>
                 <h2 className="footer__heading">Our Branches</h2>
                 <div className="footer__branches-row">
-                    <div className="footer__branch">
+                    <div className="footer__branch ">
+            
                         <div className="footer__branch-item">
                             <FontAwesomeIcon icon={faMapMarkerAlt} className="footer__icon" />
                             <p>1st floor Market 4, G-10/4, Islamabad</p>
