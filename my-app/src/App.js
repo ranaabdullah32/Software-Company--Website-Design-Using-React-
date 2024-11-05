@@ -14,7 +14,7 @@ const Contact = lazy(() => import('./Components/Contact/Contact'));
 const App = () => {
   return (
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Preloader/>}>
           <Preloader/>
       <NavBar/> 
        <Routes>

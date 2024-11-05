@@ -8,9 +8,6 @@
   background-color :var(--white-color);
   padding-top: 10px;
 }
-
-
-
 .home-container .inner-bg-overlay {
   background-color: var(--primary-color);
   bottom: 0;
@@ -19,15 +16,11 @@
   right: 26%;
   top: 0;
 }
-
-
 .home-container .row {
   display: flex;
   width: 100%;
 }
-
-
- .left-content {
+.left-content {
   flex: 1;
   padding: 50px;
   display: flex;
@@ -369,8 +362,7 @@
   margin-top: 1rem; /* Add margin for spacing */
   font-size: 18px;
   font-weight: 300;
- 
-}
+ }
 
 /* Button Styles */
 .service-container .description-area .learn-more-btn {
@@ -386,8 +378,9 @@
   font-size: 18px;
   color :var(--white-color);
 }
-@media (max-width: 912px) {
+@media (max-width: 920px) {
   .service-container .description-area .learn-more-btn  {
+    align-self: center;
     width: 100%;
   }
   .service-container .description-area {
@@ -410,8 +403,17 @@
 .service-container .description-area .title  {
   font-size: 30px;
 }
+.service-container .description-area .learn-more-btn {
 
+  width: 26%;
 }
+}
+@media (max-width: 768px) {
+  .service-container .description-area .learn-more-btn {
+      width: 100%;
+  }
+}
+/*Achievement Section*/
 .achievements-section {
   padding: 60px 0;
 }
@@ -438,6 +440,18 @@ font-weight: 700;
   font-family: Raleway,sans-serif;
 
 }
+@media (max-width: 767px) {
+  .circle-progress {
+
+    width: 100px;
+    height: 100px;
+   
+  }
+  .achievements-section .section-title {
+    font-size: 20px;
+  }
+}
+
 .amazing-team {
   background-color: var(--primary-color);
   padding: 50px 0;
@@ -627,7 +641,30 @@ font-weight: 700;
     margin-right: -4%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 920px) {
+  .custom-prev {
+    margin-left: -23%;
+  }
+  .amazing-team {
+    padding: 10px 1%;
+  }
+  .custom-next {
+    margin-right: -23%;
+  }
+  .amazing-team {
+    margin-right: 0;
+    padding: 50px 0;
+    
+  }
+  .amazing-team .team-heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 4%;
+  }
+
+}
+@media (max-width: 760px) {
   .team-heading h2{
     text-align: center;
     margin-bottom: 20px;
@@ -652,7 +689,10 @@ font-weight: 700;
   .Teamimage-section img {
     padding: 0 8%;
   }
-
+  .custom-prev,
+  .custom-next {
+    display: none;
+  }
 
 }
 
@@ -668,10 +708,7 @@ font-weight: 700;
   .team-info p {
     font-size: 0.9rem;
   }
-  .custom-prev,
-  .custom-next {
-    display: none;
-  }
+
 }
 
 

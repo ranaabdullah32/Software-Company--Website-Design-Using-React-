@@ -6,7 +6,7 @@ function Preloader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500); // Display for 3 seconds
+    const timer = setTimeout(() => setLoading(false), 1500); 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
@@ -15,7 +15,7 @@ function Preloader() {
   return (
     <div className="preloader-overlay">
       <div className="preloader-circle">
-        <div className="circle-background"></div> {/* Light gray static background circle */}
+        <div className="circle-background"></div> 
         <div className="circle-moving"></div> {/* Rotating border */}
       </div>
       <img src={favicon} alt="Company Logo" className="preloader-logo" />

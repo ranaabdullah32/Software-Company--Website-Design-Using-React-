@@ -47,8 +47,11 @@
     font-weight:  bold;
 }
 /* Footer Bottom Section */
-.footer__bottom {
+.footer_bottom_section {
     background-color: #222;
+}
+.footer__bottom {
+
     color: #fff;
     padding: 20px 0;
     display: flex;
@@ -68,6 +71,7 @@
 .footer__social-icon:hover::before {
     content: '';
     position: absolute;
+    color: black;
     top: 50%;
     left: 50%;
     width: 40px; /* Circle size */
@@ -76,7 +80,7 @@
     border-radius: 50%; /* Make it circular */
     transform: translate(-50%, -50%); /* Center the circle behind the icon */
     z-index: 0; /* Make sure the circle is below the icon */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.8s ease; /* Smooth transition */
 }
 /* Ensure the FontAwesomeIcon is above the circle */
 .footer__social-icon svg {
@@ -103,8 +107,11 @@
     .footer__bottom {
         flex-direction: column;
         text-align: center;
+        padding-left: 15%;
     }
-   
+    .footer__icon {
+        margin-right: 0%;
+    }
 
     .footer__social-container {
         order: unset; /* Revert order on small screens */
@@ -122,13 +129,23 @@
      margin: 2% 0;
      display: block ;
     text-align: center ;
+    font-size: 32px;
     }
     .footer__social-container {
     
         margin: 10px 0%;
        
     }
+    .footer__branch-item {
+        font-size: 20px;
+    }
 
+}
+@media (max-width: 767px) {
+    .footer__bottom {
+       
+        padding-left: 0%;
+    }
 }
 @keyframes slide-in-left {
     from {
@@ -153,6 +170,16 @@
     .footer__branch-item p {
         font-size: 13px;
     }
-
+    .footer__heading  {
+        font-size: 20px;
+    }
     
+}
+@media (max-width : 920px){
+    #footerbranch2 {
+        display: none;
+    }
+    #footerbranch3 {
+        display: none;
+    }
 }

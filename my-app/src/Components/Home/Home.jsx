@@ -155,43 +155,44 @@ const Home = () => {
         <Container className="service-container">
           <Row className="flex-column flex-md-row">
           <Col
-              md={6}
+              lg={6}
               className={`service-area ${aboutLeftInView ? 'slide-in-left' : ''}`}
               ref={aboutLeftRef}
             >
               <Row className="g-4">
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={weblogo} alt="Web Development" className="service-icon" />
                   <p className="serviceicon-text mt-3">Web Development</p>
                 </Col>
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={applogo} alt="App Development" className="service-icon" />
                   <p className="serviceicon-text mt-3">App Development</p>
                 </Col>
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={graphicdesign} alt="Graphic Designing" className="service-icon" />
                   <p className="serviceicon-text mt-3">Graphic Designing</p>
                 </Col>
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={seologo} alt="SEO Optimization" className="service-icon" />
                   <p className="serviceicon-text mt-3">SEO Optimization</p>
                 </Col>
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={uilogo} alt="UI/UX Designing" className="service-icon" />
                   <p className="serviceicon-text mt-3">UI/UX Designing</p>
                 </Col>
-                <Col xs={12} md={6} className="text-center">
+                <Col sm={12} lg={6} className="text-center">
                   <img src={supportlogo} alt="Website Maintenance" className="service-icon" />
                   <p className="serviceicon-text mt-3">Website Maintenance</p>
                 </Col>
               </Row>
             </Col>
             <Col
-              md={6}
+              lg={6}
               className={`description-area d-flex flex-column ${aboutRightInView ? 'slide-in-right' : ''}`}
               ref={aboutRightRef}
             >
               <h4 className="title">
+                
                 <p>OUR</p>
                 <span className="service-title">SERVICES</span>
               </h4>
@@ -212,7 +213,7 @@ const Home = () => {
         <Container>
           <h4 className="section-title text-center">Delivering IT Solutions</h4>
           <Row className="justify-content-center">
-            <Col xs={12} md={4} className="text-center">
+            <Col xs={12} lg={4} className="text-center">
               <div className="achievement-card">
                 <div className="circle-progress">
                   <CircularProgressbar
@@ -231,7 +232,7 @@ const Home = () => {
               </div>
             </Col>
 
-            <Col xs={12} md={4} className="text-center">
+            <Col xs={12} lg={4} className="text-center">
               <div className="achievement-card">
                 <div className="circle-progress">
                   <CircularProgressbar
@@ -250,7 +251,7 @@ const Home = () => {
               </div>
             </Col>
 
-            <Col xs={12} md={4} className="text-center">
+            <Col xs={12} lg={4} className="text-center">
               <div className="achievement-card">
                 <div className="circle-progress">
                   <CircularProgressbar
@@ -278,7 +279,7 @@ const Home = () => {
         <Row className="justify-content-center">
         <Col
   lg={5}
-  md={6}
+  md={12}
   className={`team-heading text-right ${teamLeftInView ? 'slide-in-left' : ''}`}
   ref={teamLeftRef}
 >

@@ -141,7 +141,7 @@ transition: width 0.3s ease, background-color 0.3s ease;
 .side-menu-inner-content {
     height: 100%; /* Set height to full */
     padding: 7%; /* Remove padding */
-    display: flex; /* Enable flexbox */
+    display: grid; /* Enable flexbox */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
     overflow: hidden;
@@ -346,7 +346,26 @@ transition: width 0.3s ease, background-color 0.3s ease;
     .text-white {
         font-size: 14px;
     }
+
 }
+@media only screen and (max-width: 990px) {
+    .side-menu {
+        text-align: center;
+    }
+    .side-menu .navbar-nav .nav-item::after {
+        display: none;
+    }
+    .side-menu .btn-close {
+        top: 13%;
+        position: fixed;
+    }
+} 
+@media only screen and (max-width: 760px) {
+
+    .side-menu .btn-close {
+        top: 3%;
+    }
+} 
 .link-fade {
     opacity: 0;
     transform: translateY(-10px);

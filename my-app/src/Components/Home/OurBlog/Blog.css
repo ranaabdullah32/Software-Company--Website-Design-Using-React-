@@ -40,7 +40,10 @@
     height: 380px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 920px) {
+    .blog-section .learn-more-btn {
+      display: none;
+    }
     .blog-section {
       flex-direction: column; /* Stack items vertically on small screens */
       background-color: var(--primary-color);
